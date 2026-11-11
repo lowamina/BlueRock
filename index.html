@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Rock Retreat | Belihuloya – Concept Demo</title>
+  <meta name="description" content="Blue Rock Retreat, Belihuloya. A nature getaway with AC rooms, swimming pool, breakfast and mountain views. Inspired by nature.">
+  <!-- Demo only: stops Google from listing this page. REMOVE when the real site goes live. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0c1b33;
+      --navy-2: #13294b;
+      --gold: #c9a24b;
+      --gold-light: #e7cd8b;
+      --leaf: #3f7d4f;
+      --ivory: #f8f5ee;
+      --ink: #1a2230;
+      --muted: #6d7482;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; color: var(--ink); background: var(--ivory); }
+    h1, h2, h3, h4, .cinzel { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 1px; }
+    .script { font-family: 'Allura', cursive; }
+    section { padding: 96px 0; }
+    .muted { color: var(--muted); }
+    .text-gold { color: var(--gold) !important; }
+    .over { font-size: .75rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .title { font-size: clamp(2rem, 4.6vw, 3.2rem); line-height: 1.15; }
+    .rule { width: 70px; height: 2px; background: var(--gold); margin: 18px 0; }
+    .rule.c { margin: 18px auto; }
+
+    .demo-bar { background: var(--gold); color: var(--navy); text-align: center; font-size: .78rem; padding: 6px; font-weight: 700; }
+
+    /* Nav */
+    .navbar { background: rgba(12,27,51,.96); border-bottom: 1px solid rgba(201,162,75,.35); }
+    .navbar-brand { display: flex; align-items: center; gap: 12px; color: #fff !important; font-family: 'Cinzel'; letter-spacing: 2px; }
+    .navbar-brand img { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold); }
+    .navbar .nav-link { color: #d7dbe3 !important; letter-spacing: 1.5px; font-size: .85rem; text-transform: uppercase; }
+    .navbar .nav-link:hover { color: var(--gold-light) !important; }
+
+    .btn-gold { background: var(--gold); color: var(--navy); border: 0; border-radius: 2px; padding: 14px 30px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; }
+    .btn-gold:hover { background: var(--gold-light); color: var(--navy); }
+    .btn-outline-gold { border: 1px solid var(--gold); color: var(--gold-light); border-radius: 2px; padding: 13px 28px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); }
+    .btn-navy { background: var(--navy); color: #fff; border: 0; border-radius: 2px; padding: 14px 30px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; }
+    .btn-navy:hover { background: var(--navy-2); color: #fff; }
+
+    /* Hero */
+    .hero { min-height: 92vh; display: flex; align-items: center; text-align: center; color: #fff; position: relative; padding: 60px 0 110px;
+      background: radial-gradient(circle at 50% 0%, rgba(201,162,75,.25), transparent 55%), linear-gradient(180deg, #13294b 0%, #0c1b33 70%); }
+    .hero-logo { width: clamp(150px, 20vw, 210px); border-radius: 50%; border: 2px solid var(--gold); box-shadow: 0 0 0 10px rgba(201,162,75,.12); }
+    .hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); margin: 26px 0 0; }
+    .hero .place { letter-spacing: 10px; font-size: .95rem; color: var(--gold-light); text-transform: uppercase; }
+    .hero .script { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--gold-light); }
+    .ridge { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 110px; }
+
+    /* Amenities */
+    .amen { background: var(--navy); color: #fff; padding: 36px 0; }
+    .amen .a { text-align: center; }
+    .amen i { font-size: 1.7rem; color: var(--gold); display: block; margin-bottom: 8px; }
+    .amen span { font-size: .85rem; letter-spacing: 1px; }
+
+    /* Photo slots */
+    .slot { background: linear-gradient(150deg, #24406b, #0c1b33); color: rgba(255,255,255,.7); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; }
+    .slot i { font-size: 2.2rem; color: var(--gold); }
+    .slot.green { background-image: linear-gradient(150deg, #4c8a5c, #1d3f29); }
+    .has-img > i, .has-img > small { display: none; }
+
+    /* Offer */
+    .offer { background: linear-gradient(120deg, #0c1b33, #1b3a2a); color: #fff; border: 1px solid var(--gold); padding: 50px; position: relative; overflow: hidden; }
+    .offer .badge-off { position: absolute; top: 24px; right: 24px; width: 104px; height: 104px; border-radius: 50%; background: var(--gold); color: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Cinzel'; font-weight: 700; line-height: 1; transform: rotate(10deg); }
+    .offer .badge-off b { font-size: 2rem; }
+    .offer .price { font-family: 'Cinzel'; font-size: clamp(2.6rem, 6vw, 4rem); color: var(--gold-light); line-height: 1; }
+    .offer ul { list-style: none; padding: 0; margin: 0; }
+    .offer li { padding: 6px 0; color: #dfe4ec; } .offer li i { color: var(--gold); margin-right: 10px; }
+
+    /* Experience rows */
+    .exp .slot { min-height: 380px; }
+    .exp h3 { font-size: 1.8rem; }
+
+    /* Nearby */
+    .near { background: #fff; border: 1px solid #e9e3d4; padding: 28px; height: 100%; transition: .3s; }
+    .near:hover { border-color: var(--gold); transform: translateY(-5px); }
+    .near i { font-size: 1.8rem; color: var(--leaf); }
+
+    /* Gallery */
+    .gal { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 10px; }
+    .gal .slot:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    @media (max-width: 767px) { .gal { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; } }
+
+    /* Booking */
+    .book { background: var(--navy); color: #fff; }
+    .book-card { background: var(--ivory); color: var(--ink); padding: 40px; border-top: 4px solid var(--gold); }
+    .book-card label { font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+    .book-card .form-control, .book-card .form-select { border-radius: 2px; border: 1px solid #d9d2c0; padding: 11px 12px; }
+    .book-card .form-control:focus, .book-card .form-select:focus { border-color: var(--gold); box-shadow: none; }
+    .est { background: #fff; border: 1px dashed var(--gold); padding: 16px 18px; font-size: .95rem; }
+    .est b { font-family: 'Cinzel'; font-size: 1.3rem; }
+
+    .map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; }
+    footer { background: #08121f; color: #9aa3b2; padding: 36px 0; font-size: .9rem; }
+    footer img { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--gold); }
+
+    .wa { position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; z-index: 999; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+    .wa:hover { color: #fff; transform: scale(1.08); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: .8s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO NOTICE: remove after the owner approves -->
+  <div class="demo-bar">CONCEPT DEMO · prepared for Blue Rock Retreat · photos and some details are samples</div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><img src="logo.png" alt="Blue Rock Retreat logo"> BLUE ROCK RETREAT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#offer">Offer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stay">The Stay</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nearby">Explore</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gold btn-sm" href="#book">Reserve</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home" data-img="hero.jpg" data-overlay="linear-gradient(180deg, rgba(12,27,51,.72), rgba(12,27,51,.88)), ">
+    <div class="container position-relative reveal" style="z-index:2">
+      <img src="logo.png" alt="Blue Rock Retreat" class="hero-logo">
+      <h1>Blue Rock Retreat</h1>
+      <div class="place mt-2">Belihuloya</div>
+      <div class="script mt-3">Inspired by nature</div>
+      <p class="lead mx-auto my-4" style="max-width:600px;color:#d7dbe3">A quiet hillside getaway with mountain views, a swimming pool and comfortable AC rooms. Made for couples, families and anyone who needs a break.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#book" class="btn btn-gold">Check Availability</a>
+        <a href="#offer" class="btn btn-outline-gold">Weekday Offer</a>
+      </div>
+    </div>
+    <svg class="ridge" viewBox="0 0 1440 110" preserveAspectRatio="none"><path fill="#0c1b33" d="M0,110 L0,70 L180,30 L320,75 L520,10 L700,70 L880,25 L1080,80 L1260,35 L1440,70 L1440,110 Z"/></svg>
+  </header>
+
+  <!-- ===== AMENITIES ===== -->
+  <div class="amen">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-snow"></i><span>Luxury AC Rooms</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-water"></i><span>Swimming Pool</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-cup-hot"></i><span>Breakfast</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-wifi"></i><span>Free Wi-Fi</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-droplet-half"></i><span>Hot Water</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-car-front"></i><span>Free Parking</span></div></div>
+        <div class="col-4 col-md"><div class="a"><i class="bi bi-flower1"></i><span>Privacy &amp; Relaxation</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== OFFER ===== -->
+  <section id="offer">
+    <div class="container">
+      <div class="offer reveal">
+        <div class="badge-off"><b>20%</b>OFF</div>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="over">Couples special offer</div>
+            <h2 class="title mt-2">A getaway made for two</h2>
+            <div class="rule"></div>
+            <div class="price">LKR 5,000</div>
+            <div class="mt-2" style="color:#dfe4ec">per person · bed &amp; breakfast · double sharing</div>
+            <div class="mt-2 text-gold fw-bold"><i class="bi bi-calendar-week me-2"></i>Monday to Friday only</div>
+            <a href="#book" class="btn btn-gold mt-4">Reserve This Offer</a>
+          </div>
+          <div class="col-lg-6">
+            <ul>
+              <li><i class="bi bi-check2-circle"></i>Luxury AC room</li>
+              <li><i class="bi bi-check2-circle"></i>Swimming pool access</li>
+              <li><i class="bi bi-check2-circle"></i>Delicious breakfast</li>
+              <li><i class="bi bi-check2-circle"></i>Free Wi-Fi in the house</li>
+              <li><i class="bi bi-check2-circle"></i>Hot water</li>
+              <li><i class="bi bi-check2-circle"></i>Free parking</li>
+              <li><i class="bi bi-check2-circle"></i>Privacy and relaxation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE STAY ===== -->
+  <section id="stay" class="pt-0 exp">
+    <div class="container">
+      <div class="text-center mb-5 reveal"><div class="over">The stay</div><h2 class="title mt-2">Where nature meets comfort</h2><div class="rule c"></div></div>
+      <div class="row g-0 align-items-center mb-4 reveal">
+        <div class="col-lg-6"><div class="slot" data-img="room.jpg"><i class="bi bi-image"></i><small class="mt-2">Room photo</small></div></div>
+        <div class="col-lg-6 p-4 p-lg-5"><h3>Rooms</h3><div class="rule"></div><p class="muted">Bright, air-conditioned rooms with comfortable beds, hot water and views of the hills. Room types and details to be confirmed by the retreat.</p><a href="#book" class="btn btn-navy">Check Availability</a></div>
+      </div>
+      <div class="row g-0 align-items-center flex-lg-row-reverse mb-4 reveal">
+        <div class="col-lg-6"><div class="slot" data-img="pool.jpg"><i class="bi bi-image"></i><small class="mt-2">Pool photo</small></div></div>
+        <div class="col-lg-6 p-4 p-lg-5"><h3>The Pool</h3><div class="rule"></div><p class="muted">Cool off in the swimming pool surrounded by greenery and mountain air. The perfect place to slow down.</p></div>
+      </div>
+      <div class="row g-0 align-items-center reveal">
+        <div class="col-lg-6"><div class="slot green" data-img="breakfast.jpg"><i class="bi bi-image"></i><small class="mt-2">Breakfast photo</small></div></div>
+        <div class="col-lg-6 p-4 p-lg-5"><h3>Breakfast</h3><div class="rule"></div><p class="muted">Start the day with a fresh, generous breakfast, served with a view.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEARBY ===== -->
+  <section id="nearby" style="background:#f1ece0">
+    <div class="container">
+      <div class="text-center mb-5 reveal"><div class="over">Explore Belihuloya</div><h2 class="title mt-2">Things to do nearby</h2><div class="rule c"></div><p class="muted">Sample list. The retreat can confirm distances and add its own favourites.</p></div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal"><div class="near"><i class="bi bi-droplet"></i><h5 class="mt-3">Waterfalls</h5><p class="muted mb-0">Bambarakanda, Sri Lanka's tallest waterfall, and Pahanthudawa Falls.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="near"><i class="bi bi-water"></i><h5 class="mt-3">Natural Pools</h5><p class="muted mb-0">Bathe in the clear, cool streams of the Belihul Oya.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="near"><i class="bi bi-signpost-2"></i><h5 class="mt-3">Hiking Trails</h5><p class="muted mb-0">Trails toward Horton Plains and the surrounding hills.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="near"><i class="bi bi-binoculars"></i><h5 class="mt-3">Scenic Views</h5><p class="muted mb-0">Samanalawewa reservoir and misty mountain lookouts.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center mb-5 reveal"><div class="over">Gallery</div><h2 class="title mt-2">A look around</h2><div class="rule c"></div></div>
+      <div class="gal reveal">
+        <div class="slot" data-img="g1.jpg"><i class="bi bi-image"></i><small class="mt-2">The house</small></div>
+        <div class="slot green" data-img="g2.jpg"><i class="bi bi-image"></i><small class="mt-2">View</small></div>
+        <div class="slot" data-img="g3.jpg"><i class="bi bi-image"></i><small class="mt-2">Room</small></div>
+        <div class="slot" data-img="g4.jpg"><i class="bi bi-image"></i><small class="mt-2">Bathroom</small></div>
+        <div class="slot green" data-img="g5.jpg"><i class="bi bi-image"></i><small class="mt-2">Pool</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="book" id="book">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5 reveal">
+          <div class="over">Reservations</div>
+          <h2 class="title mt-2">Plan your stay</h2>
+          <div class="rule"></div>
+          <p style="color:#d7dbe3">Choose your dates and send us a reservation request. We'll confirm availability and the final price.</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill text-gold me-2"></i><a href="tel:+94742704322" class="text-white text-decoration-none">074 270 4322</a></p>
+          <p class="mb-0"><i class="bi bi-geo-alt-fill text-gold me-2"></i>Belihuloya, Sri Lanka</p>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="book-card">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="d-block">Check-in</label><input type="date" id="ci" class="form-control"></div>
+              <div class="col-md-6"><label class="d-block">Check-out</label><input type="date" id="co" class="form-control"></div>
+              <div class="col-md-6"><label class="d-block">Guests</label>
+                <select id="guests" class="form-select"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+              <div class="col-md-6"><label class="d-block">Your name</label><input id="gname" class="form-control" placeholder="Name"></div>
+              <div class="col-12"><div class="est" id="est">Select your dates to see an estimate.</div></div>
+              <div class="col-12 d-flex flex-wrap gap-2">
+                <button class="btn btn-navy" onclick="reserve()"><i class="bi bi-whatsapp me-2"></i>Send Request</button>
+                <a href="tel:+94742704322" class="btn btn-gold"><i class="bi bi-telephone me-2"></i>Call</a>
+              </div>
+              <div class="col-12"><small id="bmsg" class="text-danger"></small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <div class="map"><iframe src="https://maps.google.com/maps?q=Blue%20Rock%20Retreat%20Belihuloya&z=13&output=embed" loading="lazy" title="Map to Blue Rock Retreat"></iframe></div>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="d-flex align-items-center gap-2"><img src="logo.png" alt=""> <b class="text-white cinzel">BLUE ROCK RETREAT</b></span>
+      <span>&copy; <span id="yr"></span> Blue Rock Retreat, Belihuloya</span>
+      <span>Website by Lowamina Pigera</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/94742704322" target="_blank" class="wa" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ========== SETTINGS ========== */
+    const WHATSAPP = '94742704322';
+    const OFFER_PRICE = 5000;      // LKR per person per night, BB, double sharing, Monday to Friday
+    /* ============================== */
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const rs = n => 'LKR ' + n.toLocaleString('en-LK');
+    const ci = document.getElementById('ci'), co = document.getElementById('co'), guests = document.getElementById('guests');
+
+    // earliest check-in is today
+    const iso = d => d.toISOString().slice(0, 10);
+    ci.min = iso(new Date());
+
+    // Work out the nights and whether every night is a weekday (Mon–Fri)
+    function stay() {
+      if (!ci.value || !co.value) return null;
+      const a = new Date(ci.value + 'T12:00:00'), b = new Date(co.value + 'T12:00:00');
+      const nights = Math.round((b - a) / 86400000);
+      if (nights < 1) return { nights: 0 };
+      let weekdayNights = 0;
+      for (let i = 0; i < nights; i++) {
+        const day = new Date(a.getTime() + i * 86400000).getDay();   // 0 Sun … 6 Sat
+        if (day >= 1 && day <= 5) weekdayNights++;
+      }
+      return { nights, weekdayNights, weekendNights: nights - weekdayNights };
+    }
+
+    function estimate() {
+      const box = document.getElementById('est'), s = stay(), g = +guests.value;
+      if (!s) { box.textContent = 'Select your dates to see an estimate.'; return; }
+      if (s.nights === 0) { box.textContent = 'Check-out must be after check-in.'; return; }
+      const nightsTxt = `${s.nights} night${s.nights > 1 ? 's' : ''}, ${g} guest${g > 1 ? 's' : ''}`;
+      if (s.weekendNights === 0) {
+        box.innerHTML = `${nightsTxt}<br>Weekday offer applies: <b>${rs(OFFER_PRICE * g * s.nights)}</b><br><small class="muted">Estimate at ${rs(OFFER_PRICE)} per person per night, bed &amp; breakfast. Final price confirmed by the retreat.</small>`;
+      } else {
+        box.innerHTML = `${nightsTxt}<br>Your stay includes ${s.weekendNights} weekend night${s.weekendNights > 1 ? 's' : ''}. The weekday offer is Monday to Friday only.<br><small class="muted">Send the request and the retreat will reply with the price.</small>`;
+      }
+    }
+    ci.addEventListener('change', () => { co.min = ci.value; estimate(); });
+    co.addEventListener('change', estimate);
+    guests.addEventListener('change', estimate);
+
+    function reserve() {
+      const name = document.getElementById('gname').value.trim(), msg = document.getElementById('bmsg'), s = stay();
+      if (!name) { msg.textContent = 'Please enter your name.'; return; }
+      if (!s || s.nights === 0) { msg.textContent = 'Please choose valid check-in and check-out dates.'; return; }
+      msg.textContent = '';
+      const text = `Hello Blue Rock Retreat! I'd like to make a reservation.\nName: ${name}\nCheck-in: ${ci.value}\nCheck-out: ${co.value}\nNights: ${s.nights}\nGuests: ${guests.value}\nPlease confirm availability and price. Thank you!`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // ---- Photo slots: put photos in the "img" folder (names in img/PHOTOS.txt) and they appear ----
+    document.querySelectorAll('[data-img]').forEach(el => {
+      const src = 'img/' + el.dataset.img, test = new Image();
+      test.onload = () => { el.style.backgroundImage = (el.dataset.overlay || '') + `url("${src}")`; el.style.backgroundSize = 'cover'; el.style.backgroundPosition = 'center'; el.classList.add('has-img'); };
+      test.src = src;
+    });
+
+    // ---- Reveal on scroll ----
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+    }), { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

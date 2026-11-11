@@ -1,0 +1,10 @@
+PHOTO SLOTS - Blue Rock Retreat website
+Save photos into this "img" folder with exactly these names (lowercase, .jpg). They appear automatically.
+
+hero.jpg       Background at the top of the page (wide photo of the house or the view)
+room.jpg       Rooms section
+pool.jpg       Pool section
+breakfast.jpg  Breakfast section
+g1.jpg ... g5.jpg   Gallery (g1 is the large one)
+
+Only use photos the retreat owns or has permission to use.
